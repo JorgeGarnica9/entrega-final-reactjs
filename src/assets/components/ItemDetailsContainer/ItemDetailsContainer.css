@@ -1,0 +1,43 @@
+.ItemContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: black;
+    min-height: 86.0vh;
+}
+
+.DetailsContainer{
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgb(247, 71, 71);
+}
+
+.DetailsContainer img{
+    width: 40%;
+    object-fit: cover;
+    border-radius: 20px 0px 0px 20px;
+    border-right: 5px solid rgb(247, 71, 71);
+}
+
+.DetailsText{
+    color: rgb(235, 228, 228);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.DetailsText p,h3{
+    font-size: 17px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

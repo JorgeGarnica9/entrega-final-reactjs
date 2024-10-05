@@ -1,0 +1,13 @@
+.cart{
+    margin: 0%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.cart img{
+    height: 30px;
+    color: white;
+}

@@ -1,0 +1,27 @@
+.counterContainer{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 60px;
+    border-top: 3px solid rgb(247, 71, 71);
+    padding-top: 10px;
+    
+}
+
+.btnCounter{
+    height: 40px;
+    width: 40px;
+    color: white;
+    font-weight: 900;
+    font-size: x-large;
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.counterContainer p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

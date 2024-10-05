@@ -1,0 +1,8 @@
+.ListContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 86.6vh;
+    background-color: black;
+}
