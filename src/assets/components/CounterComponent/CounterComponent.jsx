@@ -16,13 +16,13 @@ export default function CounterComponent() {
         if (contador<product.stock){
         setContador(contador+1)};
     }
-    const handleClickResta = () => {
+    const handleClickResta = () => {       
         if (contador>1){
         setContador(contador-1)};
     }
 
     const handleClickAddItem = () => {
-        addItem(product);
+        addItem(product,contador);
     }
 
     return (

@@ -1,6 +1,14 @@
 .cartSection{
     background-color: black;
     min-height: 86.6vh;
-
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
+.cartSection h2{
+    color: white;
+    font-size: large;
+    align-self: flex-end;
+    align-self:flex-end;
+}

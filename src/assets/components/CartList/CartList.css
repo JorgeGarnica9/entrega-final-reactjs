@@ -1,10 +1,11 @@
-
-
 .listedItem{
     width: 90%;
     height: 150px;
     display: flex;
     width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid rgb(247, 71, 71);
 }
 
 .listedItem img{
@@ -13,4 +14,5 @@
 
 .listedItem h3{
     color: white;
+    font-size: large;
 }
