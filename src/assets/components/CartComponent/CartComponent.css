@@ -4,11 +4,24 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cartSection h2{
     color: white;
     font-size: large;
     align-self: flex-end;
-    align-self:flex-end;
+}
+
+.cartSection h1{
+    color: white;
+    font-size: larger;
+    align-self: center;
+    margin: 10px;  
+}
+
+.btnCart{
+    display: flex;
+    justify-content: center;
+    gap: 40px;  
 }

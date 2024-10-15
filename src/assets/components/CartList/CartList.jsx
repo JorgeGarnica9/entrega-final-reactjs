@@ -1,7 +1,6 @@
 import './CartList.css';
 
 export default function CartList({product}) {
-    console.log(product)
     return(<>
     <article className="listedItem">
         <img src={product.image} alt="" />
@@ -9,6 +8,7 @@ export default function CartList({product}) {
         <h3>Precio: ${product.price}</h3>
         <h3>Cantidad: {product.qty}</h3>
         <h3>Subtotal: ${product.price*product.qty}</h3>
+        <span className='removeItem'>X</span>
     </article>
     </>)
 }
