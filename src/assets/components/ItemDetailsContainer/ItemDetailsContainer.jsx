@@ -3,6 +3,8 @@ import { getProduct } from "../../../data.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CounterComponent from "../CounterComponent/CounterComponent.jsx";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ItemDetailsContainer() {
   const [product, setProduct] = useState({});
@@ -28,6 +30,7 @@ export default function ItemDetailsContainer() {
           </div>
         </article>
       </section>
+      <ToastContainer/>
     </>
   );
 }

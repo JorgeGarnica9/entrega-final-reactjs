@@ -4,6 +4,7 @@ import BtnAddToCart from '../Button/BtnAddToCart';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../../../data';
 import { CartContext } from '../../../Context/CartContext';
+import { toast } from 'react-toastify';
 
 export default function CounterComponent() {
     const [contador, setContador] = useState(1);
@@ -23,6 +24,7 @@ export default function CounterComponent() {
 
     const handleClickAddItem = () => {
         addItem(product,contador);
+        toast('agregado')
     }
 
     return (
