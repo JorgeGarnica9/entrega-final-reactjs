@@ -24,7 +24,7 @@ export default function CounterComponent() {
 
     const handleClickAddItem = () => {
         addItem(product,contador);
-        toast('agregado')
+        toast('Producto agregado al carrito')
     }
 
     return (

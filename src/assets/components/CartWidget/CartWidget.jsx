@@ -4,17 +4,26 @@ import { CartContext } from "../../../Context/CartContext";
 import { NavLink } from "react-router-dom";
 
 export default function CartWidget() {
-  const [cart] = useContext(CartContext);
-  const totalQty = cart.reduce((acumulado, item) => acumulado + item.qty, 0);
+  const [,,,,,totalQty] = useContext(CartContext);
 
-  return (
-    <>
-      <NavLink to={"/cart"}>
-        <span className="cart">
-          <img src="/cart3.svg" alt="" />
-          <h2>{totalQty}</h2>
-        </span>
-      </NavLink>
-    </>
-  );
+  if(totalQty !== 0){
+    return (
+      <>
+        <NavLink to={"/cart"}>
+          <span className="cart">
+            <img src="/cart3.svg" alt="" />
+            <h2>{totalQty}</h2>
+          </span>
+        </NavLink>
+      </>
+    );}else{
+      return (
+        <>
+          <NavLink to={"/cart"}>
+            <span className="cart">
+              <img src="/cart3.svg" alt="" />
+            </span>
+          </NavLink>
+        </>
+    )}
 }
