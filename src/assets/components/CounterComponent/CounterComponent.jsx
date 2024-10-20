@@ -1,17 +1,24 @@
 import './CounterComponent.css';
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import BtnAddToCart from '../Button/BtnAddToCart';
 import { useParams } from 'react-router-dom';
-import { getProduct } from '../../../data';
 import { CartContext } from '../../../Context/CartContext';
 import { toast } from 'react-toastify';
+import { getSingleProduct } from '../../../Firebase/firebase';
 
 export default function CounterComponent() {
     const [contador, setContador] = useState(1);
+    const [product, setProduct] = useState([])
     const {id} = useParams();
-    const product = getProduct(id);
     const qty = (contador>1)?'unidades':'unidad';
     const [,,addItem] = useContext(CartContext);
+    
+    useEffect(() => {
+        getSingleProduct(id).then((response) =>
+          setProduct(response))
+      }, []);
+    
+    
     
     const handleClickSuma = () => {
         if (contador<product.stock){

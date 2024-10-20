@@ -14,7 +14,7 @@ export default function CardComponent({product}) {
               <h3>{product.name}</h3>
               <p>{product.title}</p>
               <div className="link">
-                <a href="#"><Link to={`/item/${product.id}`}>Ver más</Link></a>
+                <Link to={`/item/${product.id}`}>Ver más</Link>
               </div>
             </div>
         </div>

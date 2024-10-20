@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function CartComponent() {
     const [cart,,,clearCart] = useContext(CartContext);
+    
 
     const getTotalPrice = () => {
         return cart.reduce((total, item) => total + item.price * item.qty, 0);

@@ -7,7 +7,6 @@ export function CartProvider({children}){
 
     const totalQty = cart.reduce((acumulado, item) => acumulado + item.qty, 0);
 
-
     const clearCart = () => {
         setCart([]);
     }
@@ -17,13 +16,13 @@ export function CartProvider({children}){
         setCart(updatedCart);
     }
 
-    const addItem = (item, qty) => {
+    const addItem = (item, qty, id) => {
         setCart((prevCart) => {
-            const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
+            const existingItem = prevCart.find(cartItem => cartItem.id === id);
             
             if (existingItem) {
                 return prevCart.map(cartItem =>
-                    cartItem.id === item.id
+                    cartItem.id === id
                         ? { ...cartItem, qty: cartItem.qty + qty }
                         : cartItem
                 );

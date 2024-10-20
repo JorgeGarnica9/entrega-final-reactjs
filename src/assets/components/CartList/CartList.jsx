@@ -6,7 +6,8 @@ export default function CartList({product}) {
     const [,,,,removeItem] = useContext(CartContext);
     
     const handleClickRemoveId = () => {
-        removeItem(product)
+        removeItem(product);
+        
     }
     
 
@@ -17,7 +18,7 @@ export default function CartList({product}) {
         <h3>${product.price}</h3>
         <h3>Cantidad: {product.qty}</h3>
         <h3>Subtotal: ${product.price*product.qty}</h3>
-        <span className='removeItem' onClick={handleClickRemoveId} key={product}>X</span>
+        <span className='removeItem' onClick={handleClickRemoveId} key={product.id}>X</span>
     </article>
     </>)
 }

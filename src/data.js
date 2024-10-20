@@ -8,7 +8,7 @@ const products = [
         price:'90000',
         category: 'Games',
         stock: 9,
-        qty:0
+        // qty:0
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const products = [
         price:'76000',
         category: 'Games',
         stock: 10,
-        qty:0
+        // qty:0
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const products = [
         price:'1300000',
         category: 'Consoles',
         stock: 2,
-        qty:0
+        // qty:0
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const products = [
         price:'750000',
         category: 'Consoles',
         stock: 3,
-        qty:0
+        // qty:0
     },
     {
         id: 5,
@@ -52,7 +52,7 @@ const products = [
         price:'130000',
         category: 'Accesories',
         stock: 7,
-        qty:0
+        // qty:0
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ const products = [
         price:'19900',
         category: 'Shirts',
         stock: 5,
-        qty:0
+        // qty:0
     },
     {
         id: 7,
@@ -74,7 +74,7 @@ const products = [
         price:'19900',
         category: 'Shirts',
         stock: 5,
-        qty:0
+        // qty:0
     }
 ]
 
