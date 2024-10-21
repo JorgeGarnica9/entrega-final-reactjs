@@ -4,6 +4,7 @@ export const CartContext = createContext(false);
 
 export function CartProvider({children}){
     const [cart, setCart] = useState([]);
+    
 
     const totalQty = cart.reduce((acumulado, item) => acumulado + item.qty, 0);
 
@@ -12,17 +13,19 @@ export function CartProvider({children}){
     }
 
     const removeItem = (item) => {
-        const updatedCart = cart.filter(cartItem => cartItem.id !== item.id);
+        const updatedCart = cart.filter(cartItem => cartItem.intID !== item.intID);
         setCart(updatedCart);
+        
+        
     }
 
-    const addItem = (item, qty, id) => {
+    const addItem = (item, qty) => {
         setCart((prevCart) => {
-            const existingItem = prevCart.find(cartItem => cartItem.id === id);
+            const existingItem = prevCart.find(cartItem => cartItem.intID === item.intID);
             
             if (existingItem) {
                 return prevCart.map(cartItem =>
-                    cartItem.id === id
+                    cartItem.intID === item.intID
                         ? { ...cartItem, qty: cartItem.qty + qty }
                         : cartItem
                 );

@@ -17,6 +17,7 @@ export default function ItemListContainer() {
       
     } else {
       getProducts().then((products) => setMyProds(products));
+      
     }
   }, [categoryId]);
   return (
@@ -25,7 +26,7 @@ export default function ItemListContainer() {
         myProds && (
           <section className="ListContainer">
             {myProds.map((product) => (
-              <CardComponent key={product.id} product={product} />
+              <CardComponent key={product.intID} product={product} />
             ))}
           </section>
         )
