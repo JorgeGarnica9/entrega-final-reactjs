@@ -6,23 +6,25 @@ import {
   getProducts,
   filterProductsByCategory,
 } from "../../../Firebase/firebase.js";
+import Loader from "../loader.jsx";
 
 export default function ItemListContainer() {
   const [myProds, setMyProds] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
 
   useEffect(() => {
     if (categoryId) {
-      filterProductsByCategory(categoryId).then((products) => setMyProds(products));
+      filterProductsByCategory(categoryId).then((products) => {setMyProds(products);setLoading(false)});
       
     } else {
-      getProducts().then((products) => setMyProds(products));
+      getProducts().then((products) => {setMyProds(products);setLoading(false)});
       
     }
   }, [categoryId]);
   return (
     <>
-      {
+      {loading ? (<Loader/>):(
         myProds && (
           <section className="ListContainer">
             {myProds.map((product) => (
@@ -30,7 +32,7 @@ export default function ItemListContainer() {
             ))}
           </section>
         )
-      }
+      )}
     </>
   );
 }

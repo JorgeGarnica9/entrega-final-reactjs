@@ -91,9 +91,10 @@ export default function CheckoutComponent() {
             {errors.telefono && (
               <p className="error">{errors.telefono.message}</p>
             )}
-            <button type="submit" className="btnBuy">
-              Confirmar compra
-            </button>
+            <li type="submit" className="btnBuy">
+            <Button category='COMPRAR'/>
+            </li>
+            <li><NavLink to='/cart'><Button category='VOLVER'/></NavLink></li>
           </form>
         </div>
       </section>
