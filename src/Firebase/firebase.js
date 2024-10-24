@@ -52,30 +52,6 @@ export async function getProducts() {
   }
 }
 
-//filtros de precio
-export async function filterProductsByPrice(price) {
-  try {
-    const filteredQuery = query(
-      collection(db, 'products'),
-      where('price', '<', price)
-    );
-    const querySnapshot = await getDocs(filteredQuery);
-    if (querySnapshot.size !== 0) {
-      const productsList = querySnapshot.docs.map((docu) => {
-        return {
-          id: docu.id,
-          ...docu.data(),
-        };
-      });
-      return productsList;
-    } else {
-      console.log('Coleccion vacía !');
-    }
-  } catch (error) {
-    console.error('Error al obtener el documento: ', error);
-  }
-}
-
 //filtros de categoria
 export async function filterProductsByCategory(categoryId) {
   try {
@@ -123,21 +99,3 @@ export async function updateProduct(id, toUpdate) {
   }
 }
 
-//actualizacion de multiples items
-export async function updateMultipleItems() {
-  //abrimos el batch
-  const batch = writeBatch(db);
-  //creamos las referencias a los items que queremos actualizar
-  const itemRef1 = doc(db, 'products', 'XPwBaAUsLKObkFiAG2Cf');
-  const itemRef2 = doc(db, 'orders', '6mbFPxejpPOVYuCAChAb');
-  //realizar el update
-  batch.update(itemRef1, { category: 'accessories' });
-  batch.update(itemRef2, { total: 700 });
-  //llamada asincronica
-  try {
-    await batch.commit(); //ejecutando actualizaciones
-    console.log('Batch actualizado correctamente');
-  } catch (error) {
-    console.log('Error de actualizacion: ' + error);
-  }
-}
