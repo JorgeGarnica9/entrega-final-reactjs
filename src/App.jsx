@@ -5,6 +5,7 @@ import ItemListContainer from "./assets/components/ItemListContainer/ItemListCon
 import ItemDetailsContainer from "./assets/components/ItemDetailsContainer/ItemDetailsContainer";
 import { CartProvider } from "./Context/CartContext";
 import CartComponent from "./assets/components/CartComponent/CartComponent";
+import CheckoutComponent from "./assets/components/CheckoutComponent/CheckoutComponent";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/category/:categoryId' element={<ItemListContainer/>}/>
           <Route exact path='/item/:id' element={<ItemDetailsContainer/>}/>
           <Route exact path="/cart" element={<CartComponent/>}/>
+          <Route exact path="/checkout" element={<CheckoutComponent/>}/>
         </Routes>
         </CartProvider>
     </BrowserRouter>

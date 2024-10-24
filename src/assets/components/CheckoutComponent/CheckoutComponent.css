@@ -1,0 +1,36 @@
+.checkoutSection{
+    background-color: black;
+    min-height: 86.6vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Formulario{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: flex-start;
+}
+
+.Formulario input{
+    padding: .5rem;
+    width: 18rem;
+    border-radius: .5rem;
+    border: 2px solid red;
+}
+
+.Formulario input:focus{
+    outline: 0;
+    border: 2px solid black;
+    outline: 2px solid red;
+}
+
+.btnBuy{
+width: auto;
+height: auto;
+padding: 1rem;
+border-radius: .5rem;
+background-color: blue;
+}

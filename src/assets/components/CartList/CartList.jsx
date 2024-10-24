@@ -7,9 +7,7 @@ export default function CartList({product}) {
     
     const handleClickRemoveId = () => {
         removeItem(product);
-        
     }
-    
 
     return(<>
     <article className="listedItem">
