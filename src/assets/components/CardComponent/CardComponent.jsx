@@ -7,7 +7,7 @@ export default function CardComponent({product}) {
     <>
         <div className="card">
             <div className="face front">
-              <img src={product.image} alt="" />
+              <img src={product.image} alt={product.title} />
               <h3>{product.name}</h3>
             </div>
             <div className="face back">

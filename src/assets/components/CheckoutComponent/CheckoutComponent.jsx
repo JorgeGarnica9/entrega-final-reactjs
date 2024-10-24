@@ -8,15 +8,7 @@ import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 
 export default function CheckoutComponent() {
-  const [
-    cart,
-    setCart,
-    addItem,
-    clearCart,
-    removeItem,
-    totalQty,
-    getTotalPrice,
-  ] = useContext(CartContext);
+  const [cart, , , clearCart, , , getTotalPrice] = useContext(CartContext);
 
   const {
     register,
@@ -37,7 +29,7 @@ export default function CheckoutComponent() {
       // SweetAlert para confirmar la compra exitosa
       swal({
         title: "¡Compra exitosa!",
-        text: `Gracias por tu compra, ${order.buyer.nombre}. Tu ID de orden es ${id}. El total es $${order.total}.`,
+        text: `Bien hecho ${order.buyer.nombre}!!. Tu orden de compra fué generada con éxito y el ID de la misma es ${id}, ten a mano este código para posibles consultas por su seguimiento. El total a pagar es $${order.total} y se enviará la factura de pago a ${order.buyer.email}. Gracias por tu compra, vuelve pronto!!!`,
         icon: "success",
         button: "OK",
       });
@@ -46,67 +38,83 @@ export default function CheckoutComponent() {
     });
   };
 
-  if (cart.length != 0){
-  return (
-    <>
-      <section className="checkoutSection">
-        <h1>FORMULARIO DE COMPRA</h1>
-        <div className="FormContainer">
-          <p>
-            Estás a un paso de completar la compra!! Completa el siguiente
-            formulario con tus datos para que podamos generar la orden
-            correspondiente.
-          </p>
-          <form className="Formulario" onSubmit={handleSubmit(comprar)}>
-            <input
-              type="text"
-              placeholder="Ingresá tu nombre"
-              {...register("nombre", { required: "El nombre es obligatorio" })}
-            />
-            {errors.nombre && <p className="error">{errors.nombre.message}</p>}
-            <input
-              type="email"
-              placeholder="Ingresá tu e-mail"
-              {...register("email", {
-                required: "El e-mail es obligatorio",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Formato de e-mail no válido",
-                },
-              })}
-            />
-            {errors.email && <p className="error">{errors.email.message}</p>}
-            <input
-              type="phone"
-              placeholder="Ingresá tu número de teléfono"
-              {...register("telefono", {
-                required: "El número de teléfono es obligatorio",
-                minLength: {
-                  value: 10,
-                  message:
-                    "El número de teléfono debe tener al menos 10 dígitos",
-                },
-              })}
-            />
-            {errors.telefono && (
-              <p className="error">{errors.telefono.message}</p>
-            )}
-            <li type="submit" className="btnBuy">
-            <Button category='COMPRAR'/>
-            </li>
-            <li><NavLink to='/cart'><Button category='VOLVER'/></NavLink></li>
-          </form>
-        </div>
-      </section>
-    </>
-  );}else{
-    return(<>
-      <section className='cartSection'>
+  if (cart.length != 0) {
+    return (
+      <>
+        <section className="checkoutSection">
+          <h1>FORMULARIO DE COMPRA</h1>
+          <div className="FormContainer">
+            <p>
+              Estás a un paso de completar la compra!! Completa el siguiente
+              formulario con tus datos para que podamos generar la orden
+              correspondiente. Ten en cuenta que la factura se generará a tu
+              nombre y será enviada tu dirección de correo electrónico.
+            </p>
+            <form className="Formulario" onSubmit={handleSubmit(comprar)}>
+              <input
+                type="text"
+                placeholder="Ingresá tu nombre"
+                {...register("nombre", {
+                  required: "El nombre es obligatorio",
+                })}
+              />
+              {errors.nombre && (
+                <p className="error">{errors.nombre.message}</p>
+              )}
+              <input
+                type="email"
+                placeholder="Ingresá tu e-mail"
+                {...register("email", {
+                  required: "El e-mail es obligatorio",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Formato de e-mail no válido",
+                  },
+                })}
+              />
+              {errors.email && <p className="error">{errors.email.message}</p>}
+              <input
+                type="phone"
+                placeholder="Ingresá tu número de teléfono"
+                {...register("telefono", {
+                  required: "El número de teléfono es obligatorio",
+                  minLength: {
+                    value: 10,
+                    message:
+                      "El número de teléfono debe tener al menos 10 dígitos",
+                  },
+                })}
+              />
+              {errors.telefono && (
+                <p className="error">{errors.telefono.message}</p>
+              )}
+              <li type="submit" className="btnBuy">
+                <Button category="COMPRAR" />
+              </li>
+              <li>
+                <NavLink to="/cart">
+                  <Button category="VOLVER" />
+                </NavLink>
+              </li>
+            </form>
+          </div>
+        </section>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <section className="cartSection">
           <h1>AUN NO HAS AGREGADO PRODUCTOS A TU CARRITO!!</h1>
-          <ul className='btnCart'>
-              <li><NavLink to='/'><Button category='SEGUIR COMPRANDO'/></NavLink></li>
+          <ul className="btnCart">
+            <li>
+              <NavLink to="/">
+                <Button category="SEGUIR COMPRANDO" />
+              </NavLink>
+            </li>
           </ul>
-      </section>
-      </>)
+        </section>
+      </>
+    );
   }
 }

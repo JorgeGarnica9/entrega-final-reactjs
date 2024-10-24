@@ -11,7 +11,7 @@ export default function CartList({product}) {
 
     return(<>
     <article className="listedItem">
-        <img src={product.image} alt="" />
+        <img src={product.image} alt={product.title} />
         <h3>{product.name}</h3>
         <h3>${product.price}</h3>
         <h3>Cantidad: {product.qty}</h3>
