@@ -1,7 +1,7 @@
 .cartSection{
     background-color: black;
     min-height: 71.5vh;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

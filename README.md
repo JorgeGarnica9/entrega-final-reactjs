@@ -2,6 +2,9 @@
 
 Este proyecto es una Single Page Application (SPA) de un e-commerce desarrollada como parte del curso final de ReactJS de Coderhouse. La aplicación permite a los usuarios navegar, filtrar productos, ver detalles específicos de cada artículo, agregar productos al carrito y generar una orden de pedido.
 
+## Observación!
+- **Responsive**: Este proyecto **No** cuenta con la implementación para verse de manera correcta por fuera de una computadora.
+
 ## Características
 
 - **Navegación de productos:** Los usuarios pueden explorar todos los productos a la venta y filtrarlos por categoría.

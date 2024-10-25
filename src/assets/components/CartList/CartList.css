@@ -1,5 +1,5 @@
 .listedItem{
-    width: 90%;
+    width: 95%;
     height: 150px;
     display: flex;
     width: 100%;
@@ -10,11 +10,14 @@
 
 .listedItem img{
     height: 140px;
+    max-width: 140px;
+    overflow: hidden;
 }
 
 .listedItem h3{
     color: white;
     font-size: large;
+    width: 150px;
 }
 
 .removeItem{
