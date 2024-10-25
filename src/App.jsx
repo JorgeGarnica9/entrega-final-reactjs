@@ -6,6 +6,7 @@ import ItemDetailsContainer from "./assets/components/ItemDetailsContainer/ItemD
 import { CartProvider } from "./Context/CartContext";
 import CartComponent from "./assets/components/CartComponent/CartComponent";
 import CheckoutComponent from "./assets/components/CheckoutComponent/CheckoutComponent";
+import Footer from "./assets/Footer/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/cart" element={<CartComponent/>}/>
           <Route exact path="/checkout" element={<CheckoutComponent/>}/>
         </Routes>
+        <Footer/>
         </CartProvider>
     </BrowserRouter>
   );

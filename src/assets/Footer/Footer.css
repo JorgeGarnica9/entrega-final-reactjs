@@ -1,0 +1,39 @@
+.Footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-position: center;
+    background-size: cover;
+    background-color: darkslateblue;
+    border-top: 5px solid rgb(230, 226, 226);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f3f3f3;
+}
+
+.Footer h2{
+    font-size: large;
+    font-weight: bolder;
+}
+
+.Footer h3{
+    font-size: medium;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.footerLinks{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    list-style: none;
+    border-left: 4px solid #f3f3f3;
+}
+
+.footerLinks a{
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: large;
+    font-weight: bold;
+}
